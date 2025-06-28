@@ -1,0 +1,104 @@
+.gallery {
+  max-width: 880px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 17px 20px;
+  margin: 0 auto 67px;
+}
+.gallery__card {
+  max-width: 282px;
+  max-height: 361px;
+  /*border: 2px dashed yellow;*/
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.gallery__card_img {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  width: 282px;
+  height: 282px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+  /*border: 2px dashed rgb(0, 183, 255);*/
+}
+
+.gallery__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  padding-top: 0;
+  color: #000;
+  height: 79px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #ffffff;
+  /*border: 2px dashed rgb(0, 255, 76);*/
+}
+
+.gallery__footer_place {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-left: 21px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.gallery__footer_btn {
+  width: 21px;
+  height: 19px;
+  margin-right: 18px;
+  /*border: 2px dashed rgb(0, 255, 76);*/
+}
+
+.gallery__footer_btn:hover {
+  opacity: 50%;
+}
+
+@media screen and (min-width: 585px) and (max-width: 880px) {
+  .gallery {
+    max-width: 592px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .main__paragraph_name {
+    font-size: 30px;
+    line-height: normal;
+  }
+
+  .main__paragraph_about {
+    font-size: 14px;
+  }
+
+  .main__button_edit {
+    width: 22px;
+    height: 22px;
+    margin: 0 0 0 16px;
+    align-self: center;
+  }
+
+  .main__button_add {
+    width: 100%;
+  }
+
+  .main__gallery {
+    max-width: 600px;
+    margin: auto;
+    gap: 20px;
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 584px) {
+  .gallery {
+    max-width: 290px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 17px 0;
+    margin: 0 auto 67px;
+    justify-items: center;
+  }
+}

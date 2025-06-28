@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Around" />
+    <meta name="author" content="Yael Ramos " />
+    <meta
+      name="keywords"
+      content="diseño web, desarrollo frontend, HTML, CSS, portfolio, consultoría"
+    />
+
+    <title>Around</title>
+
+    <link rel="stylesheet" href="./pages/index.css" />
+    <!--<link rel="icon" href="./favicon.ico" /> -->
+  </head>
+  <body>
+    <div class="page">
+      <!-- FORMULARIO -->
+      <section class="popup popup_opened">
+        <div class="popup__form">
+          <button type="button" class="popup__button popup__button_close">
+            <img
+              src="images/Close Icon.png"
+              alt="icono de cerrar"
+              class="popup__icon-close"
+            />
+          </button>
+
+          <form action class="popup__container">
+            <!--<div class="form__container">-->
+            <h2 class="popup__title">Editar perfil</h2>
+            <fieldset class="popup__content">
+              <input
+                type="text"
+                class="popup__item popup__item_name"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombre"
+              />
+
+              <input
+                type="text"
+                class="popup__item popup__item_about"
+                id="acercademi"
+                name="acercademi"
+                placeholder="Acerca de mi"
+              />
+            </fieldset>
+            <fieldset class="popup__content">
+              <button type="submit" class="popup__button popup__button_save">
+                Guardar
+              </button>
+            </fieldset>
+
+            <!-- </div>-->
+          </form>
+        </div>
+      </section>
+
+      <!-- FORMULARIO -->
+      <header class="header">
+        <img
+          src="./images/Vector.png"
+          class="header__img"
+          alt="titulo de la pagina"
+        />
+      </header>
+
+      <main class="content">
+        <section class="main__container">
+          <img
+            src="./images/AVATAR_Y.png"
+            class="main__profile-img"
+            alt="avatar del usuario"
+          />
+          <div class="main__profile-inf">
+            <div class="main__profile main__profile_header">
+              <h3
+                class="main__profile_header main__profile_header-name"
+                id="nombreResult"
+              >
+                Yael Ramos
+              </h3>
+              <img
+                id="main__profile-btnedit"
+                src="./images/Edit Button.png"
+                alt="boton de editar"
+                style="cursor: pointer"
+              />
+            </div>
+
+            <h4 class="main__profile_header-about" id="professionResult">
+              Explorador
+            </h4>
+          </div>
+
+          <img
+            id="main__profile-addbutton"
+            src="./images/Add Button.png"
+            alt="boton de añadir"
+            style="cursor: pointer"
+          />
+        </section>
+        <section class="gallery">
+          <div class="gallery__card">
+            <img
+              src="./images/NY.jpg"
+              class="gallery__card_img"
+              alt="New york"
+            />
+            <div class="gallery__footer">
+              <h4 class="gallery__footer_place">NEW YORK</h4>
+              <img
+                src="./images/Vector.svg"
+                alt="logo megusta"
+                class="gallery__footer_btn"
+                style="cursor: pointer"
+              />
+            </div>
+          </div>
+
+          <div class="gallery__card">
+            <img
+              src="./images/DISNEYLAND.jpg"
+              class="gallery__card_img"
+              alt="Disneyland"
+            />
+            <div class="gallery__footer">
+              <h4 class="gallery__footer_place">DISNEYLAND</h4>
+              <img
+                src="./images/Vector.svg"
+                alt="logo megusta"
+                class="gallery__footer_btn"
+                style="cursor: pointer"
+              />
+            </div>
+          </div>
+          <div class="gallery__card">
+            <img
+              src="./images/UNIVERSAL.jpg"
+              class="gallery__card_img"
+              alt="universal"
+            />
+            <div class="gallery__footer">
+              <h4 class="gallery__footer_place">UNIVERSAL</h4>
+              <img
+                src="./images/Vector.svg"
+                alt="logo megusta"
+                class="gallery__footer_btn"
+                style="cursor: pointer"
+              />
+            </div>
+          </div>
+          <div class="gallery__card">
+            <img
+              src="./images/ORLANDO.jpg"
+              class="gallery__card_img"
+              alt="orlando"
+            />
+            <div class="gallery__footer">
+              <h4 class="gallery__footer_place">ORLANDO</h4>
+              <img
+                src="./images/Vector.svg"
+                alt="logo megusta"
+                class="gallery__footer_btn"
+                style="cursor: pointer"
+              />
+            </div>
+          </div>
+          <div class="gallery__card">
+            <img
+              src="./images/MIAMI.jpg"
+              class="gallery__card_img"
+              alt="MIAMI"
+            />
+            <div class="gallery__footer">
+              <h4 class="gallery__footer_place">MIAMI</h4>
+              <img
+                src="./images/Vector.svg"
+                alt="logo megusta"
+                class="gallery__footer_btn"
+                style="cursor: pointer"
+              />
+            </div>
+          </div>
+          <div class="gallery__card">
+            <img
+              src="./images/LAS VEGAS.jpg"
+              class="gallery__card_img"
+              alt="las vegas"
+            />
+            <div class="gallery__footer">
+              <h4 class="gallery__footer_place">LAS VEGAS</h4>
+              <img
+                src="./images/Vector.svg"
+                alt="logo megusta"
+                class="gallery__footer_btn"
+                style="cursor: pointer"
+              />
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <h5 class="footer__autor">© 2025 Around The U.S.</h5>
+      </footer>
+    </div>
+
+    <script src="./script/index.js"></script>
+  </body>
+</html>
