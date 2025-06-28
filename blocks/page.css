@@ -10,17 +10,11 @@ body {
 }
 .page {
   max-width: 1280px;
-  /*width: 100%;*/
+
   margin: auto;
   background-color: #000000;
   color: #fff;
   font-family: "Inter-Regular", sans-serif;
   font-size: 1rem;
   line-height: 1.25;
-
-  /*
-  analizar este apartado ya que con esta combinacion el header salia al minimo ancho
-  display: flex;
-  flex-direction: column;
-  align-items: center;*/
 }
