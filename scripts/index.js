@@ -7,8 +7,8 @@ let buttonClose = document.querySelector(".popup__button_close");
 //C
 let form = document.querySelector(".popup__container");
 //D
-let inName = document.querySelector(".main__profile_header-name");
-let inAbout = document.querySelector(".main__profile_header-about");
+let inName = document.querySelector(".main__profile-name");
+let inAbout = document.querySelector(".main__profile-about");
 let inpName = document.querySelector(".popup__item_name");
 let inpAbout = document.querySelector(".popup__item_about");
 
