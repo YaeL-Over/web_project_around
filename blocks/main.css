@@ -45,6 +45,11 @@
   width: 24px;
   margin-left: 18px;
 }
+
+#main__profile-addbutton {
+  height: 50px;
+  width: 150px;
+}
 #main__profile-btnedit:hover {
   opacity: 50%;
 }
@@ -87,18 +92,19 @@
   }
   .main__container {
     max-width: 282px;
-    height: 336px;
+    height: 420px;
     margin: 0 auto 36px;
     padding-bottom: 0;
     display: flex;
     flex-direction: column;
     /*align-items: center;*/
-    /* justify-content: center;*/
+    /*justify-content: center;*/
   }
 
   .main__profile-img {
     /*padding-top: 42px;*/
     margin: 42px auto 30px;
+
     /*border: 2px dashed white;*/
   }
   .main__profile-inf {
@@ -132,9 +138,8 @@
   }
   #main__profile-addbutton {
     width: 282px;
-
-    height: 60px;
-    padding: 36px 0;
+    height: 50px;
+    padding: 0;
     margin: 36px auto;
   }
 }

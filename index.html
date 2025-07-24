@@ -18,7 +18,7 @@
   <body>
     <div class="page">
       <!-- FORMULARIO -->
-      <section class="popup popup_opened">
+      <section class="popup">
         <div class="popup__form">
           <button type="button" class="popup__button popup__button_close">
             <img
@@ -27,9 +27,7 @@
               class="popup__icon-close"
             />
           </button>
-
           <form class="popup__container">
-            <!--<div class="form__container">-->
             <h2 class="popup__title">Editar perfil</h2>
             <fieldset class="popup__content">
               <input
@@ -39,7 +37,6 @@
                 name="nombre"
                 placeholder="Nombre"
               />
-
               <input
                 type="text"
                 class="popup__item popup__item_about"
@@ -53,13 +50,72 @@
                 Guardar
               </button>
             </fieldset>
-
-            <!-- </div>-->
           </form>
         </div>
       </section>
+      <!--FORMULARIO -->
+      <!-- FORMULARIO2  -->
+      <section class="popup" id="popupAdd">
+        <div class="popup__form">
+          <button type="button" class="popup__button popup__button_closecre">
+            <img
+              src="images/Close_Icon.png"
+              alt="icono de cerrar"
+              class="popup__icon-close"
+            />
+          </button>
+          <form class="popup__container-add">
+            <h2 class="popup__title">Nuevo lugar</h2>
+            <fieldset class="popup__content">
+              <input
+                type="text"
+                class="popup__item popup__item_title"
+                id="titulo"
+                name="titulo"
+                placeholder="Titulo"
+              />
+              <input
+                type="text"
+                class="popup__item popup__item_link"
+                id="link"
+                name="link"
+                placeholder="Link de la imagen"
+              />
+            </fieldset>
+            <fieldset class="popup__content">
+              <button type="submit" class="popup__button popup__button_created">
+                Crear
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+      <!--FORMULARIO2 -->
 
-      <!-- FORMULARIO -->
+      <!-- imagen popup-->
+      <div class="popup__image-p popup">
+        <button
+          type="button"
+          id="button__close3"
+          class="popup__button popup__button_close"
+        >
+          <img
+            src="images/Close_Icon.png"
+            alt="icono de cerrar"
+            class="popup__icon-close"
+          />
+        </button>
+
+        <img
+          src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg"
+          alt=""
+          class="popup__image-pic"
+        />
+
+        <p class="popup__image-caption">Imagen</p>
+      </div>
+
+      <!-- imagen popup fin -->
       <header class="header">
         <img
           src="./images/Vector.png"
@@ -98,111 +154,38 @@
             style="cursor: pointer"
           />
         </section>
-        <section class="gallery">
-          <div class="gallery__card">
-            <img
-              src="./images/NY.jpg"
-              class="gallery__card-img"
-              alt="New york"
-            />
-            <div class="gallery__footer">
-              <h4 class="gallery__footer-place">NEW YORK</h4>
-              <img
-                src="./images/Vector.svg"
-                alt="logo megusta"
-                class="gallery__footer-btn"
-                style="cursor: pointer"
-              />
-            </div>
-          </div>
-
-          <div class="gallery__card">
-            <img
-              src="./images/DISNEYLAND.jpg"
-              class="gallery__card-img"
-              alt="Disneyland"
-            />
-            <div class="gallery__footer">
-              <h4 class="gallery__footer-place">DISNEYLAND</h4>
-              <img
-                src="./images/Vector.svg"
-                alt="logo megusta"
-                class="gallery__footer-btn"
-                style="cursor: pointer"
-              />
-            </div>
-          </div>
-          <div class="gallery__card">
-            <img
-              src="./images/UNIVERSAL.jpg"
-              class="gallery__card-img"
-              alt="universal"
-            />
-            <div class="gallery__footer">
-              <h4 class="gallery__footer-place">UNIVERSAL</h4>
-              <img
-                src="./images/Vector.svg"
-                alt="logo megusta"
-                class="gallery__footer-btn"
-                style="cursor: pointer"
-              />
-            </div>
-          </div>
-          <div class="gallery__card">
-            <img
-              src="./images/ORLANDO.jpg"
-              class="gallery__card-img"
-              alt="orlando"
-            />
-            <div class="gallery__footer">
-              <h4 class="gallery__footer-place">ORLANDO</h4>
-              <img
-                src="./images/Vector.svg"
-                alt="logo megusta"
-                class="gallery__footer-btn"
-                style="cursor: pointer"
-              />
-            </div>
-          </div>
-          <div class="gallery__card">
-            <img
-              src="./images/MIAMI.jpg"
-              class="gallery__card-img"
-              alt="MIAMI"
-            />
-            <div class="gallery__footer">
-              <h4 class="gallery__footer-place">MIAMI</h4>
-              <img
-                src="./images/Vector.svg"
-                alt="logo megusta"
-                class="gallery__footer-btn"
-                style="cursor: pointer"
-              />
-            </div>
-          </div>
-          <div class="gallery__card">
-            <img
-              src="./images/LAS_VEGAS.jpg"
-              class="gallery__card-img"
-              alt="las vegas"
-            />
-            <div class="gallery__footer">
-              <h4 class="gallery__footer-place">LAS VEGAS</h4>
-              <img
-                src="./images/Vector.svg"
-                alt="logo megusta"
-                class="gallery__footer-btn"
-                style="cursor: pointer"
-              />
-            </div>
-          </div>
-        </section>
+        <section class="gallery"></section>
       </main>
       <footer class="footer">
         <h5 class="footer__autor">© 2025 Around The U.S.</h5>
       </footer>
     </div>
+    <template class="template-card">
+      <div class="gallery__card">
+        <img
+          src="./images/NY.jpg"
+          class="gallery__card-img"
+          alt="New york"
+          style="cursor: pointer"
+        />
 
+        <img
+          src="./images/Trash.svg"
+          alt="icono de eliminar"
+          class="gallery__footer-del"
+          style="cursor: pointer"
+        />
+
+        <div class="gallery__footer">
+          <h4 class="gallery__footer-place">NEW YORK</h4>
+          <button
+            aria-label="Like button"
+            class="gallery__footer-btn"
+            type="button"
+          ></button>
+        </div>
+      </div>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
