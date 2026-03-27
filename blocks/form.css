@@ -1,4 +1,8 @@
-/* .form{}*/
+/* 
+
+popup__container-add
+
+*/
 
 .popup {
   display: none;
@@ -19,7 +23,7 @@
   display: flex;
 }
 
-.popup__form {
+.popup__container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -36,8 +40,7 @@
   background-color: transparent;
 }
 
-.popup__container,
-.popup__container-add {
+.popup__form {
   width: 430px;
   background-color: #fff;
   border-radius: 10px;
@@ -56,29 +59,12 @@
   border: 0;
   padding: 0;
 }
-.popup__item {
+.popup__input {
   width: 100%;
   border: 0;
   margin-bottom: 30px;
   color: #c4c4c4;
   border-bottom: 1px solid #c4c4c4;
-}
-.popup__button_save {
-  width: 100%;
-  background-color: #fff;
-  color: #c4c4c4;
-  border: 1px solid #c4c4c4;
-  padding: 10px;
-  margin-bottom: 40px;
-}
-
-.popup__button_created {
-  width: 100%;
-  background-color: #000000;
-  color: #ffffff;
-  border: 1px solid #c4c4c4;
-  padding: 10px;
-  margin-bottom: 40px;
 }
 
 /*.popup__image-p {
@@ -122,23 +108,70 @@
   align-self: self-start;
 }
 
-.popup__button_save:hover {
+.popup__error {
+  display: none;
+  color: red;
+  font-size: 12px;
+  /*margin-top: 5px;
+  margin-bottom: 15px;
+  min-height: 20px;*/
+}
+
+.popup__input_error {
+  border-bottom: 1px solid red;
+}
+
+.popup__span_error {
+  display: block;
+}
+
+.popup__button_created,
+.popup__button_save {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #c4c4c4;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+/*.popup__button_save {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #c4c4c4;
+  padding: 10px;
+  margin-bottom: 36.51px;
+}*/
+.popup__button_save:hover,
+.popup__button_created:hover {
   background-color: #000;
   opacity: 80%;
+  cursor: pointer;
+  color: white;
 }
-.popup__button_close:hover {
+
+/*.popup__button_created:hover {
   opacity: 80%;
+}*/
+
+.popup__button_save:disabled,
+.popup__button_created:disabled {
+  background-color: #f5f5f5;
+  opacity: 20%;
+  color: #000000;
+  cursor: not-allowed;
 }
 
 .popup__button:hover {
   opacity: 80%;
 }
-.popup__button_created:hover {
+
+.popup__button_close:hover {
   opacity: 80%;
 }
 
 @media screen and (min-width: 320px) and (max-width: 465px) {
-  .popup__form {
+  .popup__container {
     width: 282px;
   }
   .popup__button_close {
@@ -150,8 +183,7 @@
   .popup__icon-close {
     width: 100%;
   }
-  .popup__container,
-  .popup__container-add {
+  .popup__form {
     /*margin: auto;*/
     width: 100%;
     background-color: #fff;

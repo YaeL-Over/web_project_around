@@ -6,21 +6,21 @@ let popup = document.querySelector(".popup");
 let buttonClose = document.querySelector(".popup__button_close");
 let buttonCloseCre = document.querySelector(".popup__button_closecre");
 //C
-let form = document.querySelector(".popup__container");
+let form = document.querySelector(".popup__form");
 //D
 let inName = document.querySelector(".main__profile-name");
 let inAbout = document.querySelector(".main__profile-about");
-let inpName = document.querySelector(".popup__item_name");
-let inpAbout = document.querySelector(".popup__item_about");
+let inpName = document.querySelector(".popup__input_name");
+let inpAbout = document.querySelector(".popup__input_about");
 
 //s9D
 let inTitle = document.querySelector(".gallery__footer-place");
 let inLink = document.querySelector(".gallery__card-img");
-let inpTitle = document.querySelector(".popup__item_title");
-let inpLink = document.querySelector(".popup__item_link");
+let inpTitle = document.querySelector(".popup__input_title");
+let inpLink = document.querySelector(".popup__input_link");
 
 //s9A
-let formAdd = document.querySelector(".popup__container-add ");
+let formAdd = document.querySelector(".popup__form-add ");
 let buttonAdd = document.querySelector("#main__profile-addbutton");
 let popupAdd = document.querySelector("#popupAdd");
 let buttonClose3 = document.querySelector("#button__close3");
@@ -29,8 +29,6 @@ let buttonNew = document.querySelector(".popup__button_created");
 buttonAdd.addEventListener("click", openAdd);
 //A
 function openEdit() {
-  //inpName.value = inName.textContent;
-  //inpAbout.value = inAbout.textContent;
   popup.classList.toggle("popup_opened");
 }
 function openAdd() {
@@ -139,3 +137,8 @@ function openImagePopup(src, captionText) {
 // Añade el listener para cerrar al botón
 //imageCloseButton.addEventListener("click", closePopup);
 //imageContainer.addEventListener("click", closePopup);
+
+//SPRINT9 NUEVO
+
+//Deshabilitar el boton de guardar funciona para el primer for ya que las etiqetas y el DOM estan orientas al primero
+// forms .popup_opened

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,13 +13,13 @@
     <title>Around</title>
 
     <link rel="stylesheet" href="./pages/index.css" />
-    <!--<link rel="icon" href="./favicon.ico" /> -->
+    <!--<link rel="icon" href="./favicon.ico" /> normalize -->
   </head>
   <body>
     <div class="page">
       <!-- FORMULARIO -->
       <section class="popup">
-        <div class="popup__form">
+        <div class="popup__container">
           <button type="button" class="popup__button popup__button_close">
             <img
               src="images/Close_Icon.png"
@@ -27,26 +27,38 @@
               class="popup__icon-close"
             />
           </button>
-          <form class="popup__container">
+          <form class="popup__form" name="Edit" novalidate>
             <h2 class="popup__title">Editar perfil</h2>
             <fieldset class="popup__content">
               <input
                 type="text"
-                class="popup__item popup__item_name"
+                class="popup__input popup__input_name"
                 id="nombre"
                 name="nombre"
                 placeholder="Nombre"
+                minlength="2"
+                maxlength="40"
+                required
               />
+              <span class="popup__error popup__error_nombre"></span>
               <input
                 type="text"
-                class="popup__item popup__item_about"
+                class="popup__input popup__input_about"
                 id="acercademi"
                 name="acercademi"
                 placeholder="Acerca de mi"
+                minlength="2"
+                maxlength="200"
+                required
               />
+              <span class="popup__error popup__error_acercademi"></span>
             </fieldset>
             <fieldset class="popup__content">
-              <button type="submit" class="popup__button popup__button_save">
+              <button
+                type="submit"
+                class="popup__button popup__button_save"
+                disabled
+              >
                 Guardar
               </button>
             </fieldset>
@@ -56,7 +68,7 @@
       <!--FORMULARIO -->
       <!-- FORMULARIO2  -->
       <section class="popup" id="popupAdd">
-        <div class="popup__form">
+        <div class="popup__container">
           <button type="button" class="popup__button popup__button_closecre">
             <img
               src="images/Close_Icon.png"
@@ -64,23 +76,27 @@
               class="popup__icon-close"
             />
           </button>
-          <form class="popup__container-add">
+          <form class="popup__form popup__form-add" novalidate>
             <h2 class="popup__title">Nuevo lugar</h2>
             <fieldset class="popup__content">
               <input
                 type="text"
-                class="popup__item popup__item_title"
+                class="popup__input popup__input_title"
                 id="titulo"
                 name="titulo"
                 placeholder="Titulo"
-              />
+                minlength="2"
+                maxlength="30"
+                required
+              /><span class="popup__error popup__error_titulo"></span>
               <input
-                type="text"
-                class="popup__item popup__item_link"
+                type="url"
+                class="popup__input popup__input_link"
                 id="link"
                 name="link"
                 placeholder="Link de la imagen"
-              />
+                required
+              /><span class="popup__error popup__error_link"></span>
             </fieldset>
             <fieldset class="popup__content">
               <button type="submit" class="popup__button popup__button_created">
@@ -187,5 +203,6 @@
       </div>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
