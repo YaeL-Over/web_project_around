@@ -43,16 +43,16 @@
 #main__profile-btnedit {
   height: 24px;
   width: 24px;
-  margin-left: 18px;
+  margin: 0;
 }
 
 #main__profile-addbutton {
   height: 50px;
   width: 150px;
 }
-#main__profile-btnedit:hover {
+/*#main__profile-btnedit:hover {
   opacity: 50%;
-}
+}*/
 .main__profile_inf-proffesion {
   font-size: 1.1rem;
 }
@@ -80,7 +80,7 @@
   #main__profile-btnedit {
     height: 20px;
     width: 20px;
-    margin-left: 15px;
+    margin-left: 0;
   }
 }
 

@@ -13,7 +13,7 @@
     <title>Around</title>
 
     <link rel="stylesheet" href="./pages/index.css" />
-    <!--<link rel="icon" href="./favicon.ico" /> normalize -->
+    <!--<link rel="icon" href="./favicon.ico" /> main -->
   </head>
   <body>
     <div class="page">
@@ -150,25 +150,26 @@
           <div class="main__profile-inf">
             <div class="main__profile main__profile_header">
               <h3 class="main__profile-name" id="nombreResult">Yael Ramos</h3>
-              <img
-                id="main__profile-btnedit"
-                src="./images/Edit_Button.png"
-                alt="boton de editar"
-                style="cursor: pointer"
-              />
+              <button type="button" class="popup__button popup__button_edit">
+                <img
+                  id="main__profile-btnedit"
+                  src="./images/Edit_Button.png"
+                  alt="boton de editar"
+                />
+              </button>
             </div>
 
             <h4 class="main__profile-about" id="professionResult">
               Explorador
             </h4>
           </div>
-
-          <img
-            id="main__profile-addbutton"
-            src="./images/Add_Button.png"
-            alt="boton de añadir"
-            style="cursor: pointer"
-          />
+          <button type="button" class="popup__button">
+            <img
+              id="main__profile-addbutton"
+              src="./images/Add_Button.png"
+              alt="boton de añadir"
+            />
+          </button>
         </section>
         <section class="gallery"></section>
       </main>
@@ -184,13 +185,14 @@
           alt="New york"
           style="cursor: pointer"
         />
-
-        <img
-          src="./images/Trash.svg"
-          alt="icono de eliminar"
-          class="gallery__footer-del"
-          style="cursor: pointer"
-        />
+        <button type="button" class="popup__button popup__button_trash">
+          <img
+            src="./images/Trash.svg"
+            alt="icono de eliminar"
+            class="gallery__footer-del"
+            style="cursor: pointer"
+          />
+        </button>
 
         <div class="gallery__footer">
           <h4 class="gallery__footer-place">NEW YORK</h4>
