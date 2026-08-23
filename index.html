@@ -13,12 +13,12 @@
     <title>Around</title>
 
     <link rel="stylesheet" href="./pages/index.css" />
-    <!--<link rel="icon" href="./favicon.ico" /> main -->
+    <!--<link rel="icon" href="./favicon.ico" /> main popup__form-->
   </head>
   <body>
     <div class="page">
-      <!-- FORMULARIO -->
-      <section class="popup">
+      <!-- FORMULARIO popup__button_close-->
+      <section class="popup popup_edit main__profile-btnedit">
         <div class="popup__container">
           <button type="button" class="popup__button popup__button_close">
             <img
@@ -65,11 +65,14 @@
           </form>
         </div>
       </section>
-      <!--FORMULARIO -->
+      <!--FORMULARIO main__profile-addbutton-->
       <!-- FORMULARIO2  -->
-      <section class="popup" id="popupAdd">
+      <section class="popup main__profile-addbutton">
         <div class="popup__container">
-          <button type="button" class="popup__button popup__button_closecre">
+          <button
+            type="button"
+            class="popup__button popup__button_close popup__button_closecre"
+          >
             <img
               src="images/Close_Icon.png"
               alt="icono de cerrar"
@@ -106,9 +109,9 @@
           </form>
         </div>
       </section>
-      <!--FORMULARIO2 -->
+      <!--FORMULARIO2  popup-->
 
-      <!-- imagen popup-->
+      <!-- imagen main__profile-btnedit popup__form-add-->
       <div class="popup__image-p popup">
         <button
           type="button"
@@ -150,12 +153,12 @@
           <div class="main__profile-inf">
             <div class="main__profile main__profile_header">
               <h3 class="main__profile-name" id="nombreResult">Yael Ramos</h3>
-              <button type="button" class="popup__button popup__button_edit">
-                <img
-                  id="main__profile-btnedit"
-                  src="./images/Edit_Button.png"
-                  alt="boton de editar"
-                />
+              <button
+                type="button"
+                class="popup__button popup__button-main popup__button_edit"
+                id="main__profile-btnedit"
+              >
+                <img src="./images/Edit_Button.png" alt="boton de editar" />
               </button>
             </div>
 
@@ -163,12 +166,12 @@
               Explorador
             </h4>
           </div>
-          <button type="button" class="popup__button">
-            <img
-              id="main__profile-addbutton"
-              src="./images/Add_Button.png"
-              alt="boton de añadir"
-            />
+          <button
+            type="button"
+            class="popup__button popup__button-main"
+            id="main__profile-addbutton"
+          >
+            <img src="./images/Add_Button.png" alt="boton de añadir" />
           </button>
         </section>
         <section class="gallery"></section>
@@ -204,7 +207,6 @@
         </div>
       </div>
     </template>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validate.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

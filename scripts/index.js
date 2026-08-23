@@ -1,60 +1,19 @@
-//A
-let buttonEdit = document.querySelector("#main__profile-btnedit");
-//A
-let popup = document.querySelector(".popup");
-//B
-let buttonClose = document.querySelector(".popup__button_close");
-let buttonCloseCre = document.querySelector(".popup__button_closecre");
-//C
-let form = document.querySelector(".popup__form");
-//D
-let inName = document.querySelector(".main__profile-name");
-let inAbout = document.querySelector(".main__profile-about");
-let inpName = document.querySelector(".popup__input_name");
-let inpAbout = document.querySelector(".popup__input_about");
+// --- IMPORTACIÓN DE MÓDULOS ---
+import Card from "./card.js";
+import FormValidator from "./FormValidator.js";
+import { openPopup, closePopup, setOverlayClose } from "./utils.js";
 
-//s9D
-let inTitle = document.querySelector(".gallery__footer-place");
-let inLink = document.querySelector(".gallery__card-img");
-let inpTitle = document.querySelector(".popup__input_title");
-let inpLink = document.querySelector(".popup__input_link");
+// --- CONFIGURACIÓN DE VALIDACIÓN ---
+const validationConfig = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button[type='submit']",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
 
-//s9A
-let formAdd = document.querySelector(".popup__form-add ");
-let buttonAdd = document.querySelector("#main__profile-addbutton");
-let popupAdd = document.querySelector("#popupAdd");
-let buttonClose3 = document.querySelector("#button__close3");
-let buttonNew = document.querySelector(".popup__button_created");
-
-buttonAdd.addEventListener("click", openAdd);
-//A
-function openEdit() {
-  popup.classList.toggle("popup_opened");
-}
-function openAdd() {
-  popupAdd.classList.toggle("popup_opened");
-}
-
-//A
-buttonEdit.addEventListener("click", openEdit);
-//B
-
-buttonClose.addEventListener("click", openEdit);
-
-buttonCloseCre.addEventListener("click", openAdd);
-buttonClose3.addEventListener("click", openImagePopup);
-
-//C
-function saveChange(e) {
-  e.preventDefault();
-  inName.textContent = inpName.value;
-  inAbout.textContent = inpAbout.value;
-  openEdit();
-}
-//C
-form.addEventListener("submit", saveChange);
-// funcion para crear tarjeta a partir de la entrada de inf
-
+// --- DATOS INICIALES ---
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -82,63 +41,98 @@ const initialCards = [
   },
 ];
 
-const templateCard = document.querySelector(".template-card");
-const cardList = document.querySelector(".gallery");
+// --- SELECTORES DEL DOM ---
+const gallery = document.querySelector(".gallery");
 
-initialCards.forEach(function (item) {
-  createdCard(item.name, item.link);
+// Popups
+const popupEdit = document.querySelector(".popup_edit");
+const popupAdd = document.querySelector(".main__profile-addbutton.popup");
+const popupImage = document.querySelector(".popup__image-p");
+const allPopups = document.querySelectorAll(".popup");
+
+// Botones de apertura
+const editButton = document.querySelector("#main__profile-btnedit");
+const addButton = document.querySelector("#main__profile-addbutton");
+
+// Formularios e inputs
+const formEdit = popupEdit.querySelector(".popup__form");
+const nameInput = formEdit.querySelector("#nombre");
+const aboutInput = formEdit.querySelector("#acercademi");
+
+const formAdd = popupAdd.querySelector(".popup__form-add");
+const titleInput = formAdd.querySelector("#titulo");
+const linkInput = formAdd.querySelector("#link");
+
+// Elementos de perfil
+const profileName = document.querySelector("#nombreResult");
+const profileAbout = document.querySelector("#professionResult");
+
+// --- FUNCIONES DE TARJETAS ---
+// Función auxiliar para crear y devolver el elemento de una tarjeta
+function createCard(item) {
+  const card = new Card(item, ".template-card");
+  return card.generateCard();
+}
+
+// Renderizar tarjetas iniciales
+initialCards.forEach((item) => {
+  const cardElement = createCard(item);
+  gallery.append(cardElement);
 });
 
-function createdCard(title, link) {
-  const clonedCard = templateCard.content
-    .querySelector(".gallery__card")
-    .cloneNode(true);
-  const cardTitle = clonedCard.querySelector(".gallery__footer-place");
-  const cardImage = clonedCard.querySelector(".gallery__card-img");
-  const cardDelete = clonedCard.querySelector(".gallery__footer-del");
-  const cardLikeButton = clonedCard.querySelector(".gallery__footer-btn");
-  cardTitle.textContent = title;
-  cardImage.src = link;
-  cardDelete.addEventListener("click", function () {
-    clonedCard.remove();
-  });
-  cardLikeButton.addEventListener("click", function () {
-    cardLikeButton.classList.toggle("gallery__footer-btn_active");
-  });
-  cardImage.addEventListener("click", function () {
-    openImagePopup(link, title);
-  });
+// --- VALIDACIÓN DE FORMULARIOS ---
+// Creamos una instancia de FormValidator para cada formulario
+const editFormValidator = new FormValidator(validationConfig, formEdit);
+editFormValidator.setEventListeners();
 
-  cardList.append(clonedCard);
-}
-//APARTADO PARA CREAR NUEVA CARTA
-function newCard(e) {
-  e.preventDefault();
-  const title = inpTitle.value;
-  const link = inpLink.value;
-  createdCard(title, link);
-  openAdd();
-}
+const addFormValidator = new FormValidator(validationConfig, formAdd);
+addFormValidator.setEventListeners();
 
-formAdd.addEventListener("submit", newCard);
+// --- EVENTOS DE APERTURA Y CIERRE DE POPUPS ---
 
-//APARTADO PARA ABRIR LA IMAGEN EN TAMAÑO MAS GRANDE EN PROCESO
+// Abrir popup de editar perfil
+editButton.addEventListener("click", () => {
+  nameInput.value = profileName.textContent.trim();
+  aboutInput.value = profileAbout.textContent.trim();
+  openPopup(popupEdit);
+});
 
-function openImagePopup(src, captionText) {
-  const imagePopup = document.querySelector(".popup__image-p");
-  const imagenPopup = document.querySelector(".popup__image-pic");
-  const imagenTitle = document.querySelector(".popup__image-caption");
+// Abrir popup de añadir tarjeta
+addButton.addEventListener("click", () => {
+  openPopup(popupAdd);
+});
 
-  imagePopup.classList.toggle("popup_opened-grid");
-  imagenPopup.src = src;
-  imagenTitle.textContent = captionText;
-}
+// Asignar listeners de cierre a todos los popups (botón X y clic fuera en el overlay)
+allPopups.forEach((popup) => {
+  const closeButton = popup.querySelector(".popup__button_close");
+  if (closeButton) {
+    closeButton.addEventListener("click", () => closePopup(popup));
+  }
+  setOverlayClose(popup);
+});
 
-// Añade el listener para cerrar al botón
-//imageCloseButton.addEventListener("click", closePopup);
-//imageContainer.addEventListener("click", closePopup);
+// --- MANEJO DE ENVÍO DE FORMULARIOS ---
 
-//SPRINT9 NUEVO
+// Guardar cambios del perfil
+formEdit.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileAbout.textContent = aboutInput.value;
+  closePopup(popupEdit);
+});
 
-//Deshabilitar el boton de guardar funciona para el primer for ya que las etiqetas y el DOM estan orientas al primero
-// forms .popup_opened
+// Crear nueva tarjeta
+formAdd.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+
+  const newCardData = {
+    name: titleInput.value,
+    link: linkInput.value,
+  };
+
+  const cardElement = createCard(newCardData);
+  gallery.prepend(cardElement); // .prepend para colocarla al principio
+
+  formAdd.reset(); // Limpia los campos del formulario
+  closePopup(popupAdd);
+});
