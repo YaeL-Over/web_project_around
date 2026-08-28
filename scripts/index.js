@@ -134,5 +134,6 @@ formAdd.addEventListener("submit", (evt) => {
   gallery.prepend(cardElement); // .prepend para colocarla al principio
 
   formAdd.reset(); // Limpia los campos del formulario
+  addFormValidator.resetValidation();
   closePopup(popupAdd);
 });

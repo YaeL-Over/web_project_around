@@ -1,33 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Around" />
-    <meta name="author" content="Yael Ramos " />
+    <meta name="description" content="Around The U.S." />
+    <meta name="author" content="Yael Ramos" />
     <meta
       name="keywords"
-      content="diseño web, desarrollo frontend, HTML, CSS, portfolio, consultoría"
+      content="diseño web, desarrollo frontend, HTML, CSS, portfolio"
     />
 
     <title>Around</title>
 
     <link rel="stylesheet" href="./pages/index.css" />
-    <!--<link rel="icon" href="./favicon.ico" /> main popup__form-->
   </head>
   <body>
     <div class="page">
-      <!-- FORMULARIO popup__button_close-->
-      <section class="popup popup_edit popup_type_edit">
+      <!-- FORMULARIO EDITAR PERFIL -->
+      <section class="popup popup_type_edit popup_edit">
         <div class="popup__container">
-          <button type="button" class="popup__button popup__button_close">
+          <button
+            type="button"
+            class="popup__button popup__button_close"
+            aria-label="Cerrar modal"
+          >
             <img
               src="images/Close_Icon.png"
               alt="icono de cerrar"
               class="popup__icon-close"
             />
           </button>
-          <form class="popup__form" name="Edit" novalidate>
+          <form
+            class="popup__form popup__form_type_edit"
+            name="Edit"
+            novalidate
+          >
             <h2 class="popup__title">Editar perfil</h2>
             <fieldset class="popup__content">
               <input
@@ -41,6 +48,7 @@
                 required
               />
               <span class="popup__error popup__error_nombre"></span>
+
               <input
                 type="text"
                 class="popup__input popup__input_about"
@@ -65,13 +73,14 @@
           </form>
         </div>
       </section>
-      <!--FORMULARIO main__profile-addbutton-->
-      <!-- FORMULARIO2  popup_add-->
-      <section class="popup popup_type_add">
+
+      <!-- FORMULARIO NUEVO LUGAR -->
+      <section class="popup popup_type_add popup_add">
         <div class="popup__container">
           <button
             type="button"
-            class="popup__button popup__button_close popup__button_closecre"
+            class="popup__button popup__button_close"
+            aria-label="Cerrar modal"
           >
             <img
               src="images/Close_Icon.png"
@@ -79,7 +88,7 @@
               class="popup__icon-close"
             />
           </button>
-          <form class="popup__form popup__form-add" novalidate>
+          <form class="popup__form popup__form-add" name="AddCard" novalidate>
             <h2 class="popup__title">Nuevo lugar</h2>
             <fieldset class="popup__content">
               <input
@@ -91,7 +100,9 @@
                 minlength="2"
                 maxlength="30"
                 required
-              /><span class="popup__error popup__error_titulo"></span>
+              />
+              <span class="popup__error popup__error_titulo"></span>
+
               <input
                 type="url"
                 class="popup__input popup__input_link"
@@ -99,50 +110,52 @@
                 name="link"
                 placeholder="Link de la imagen"
                 required
-              /><span class="popup__error popup__error_link"></span>
+              />
+              <span class="popup__error popup__error_link"></span>
             </fieldset>
             <fieldset class="popup__content">
-              <button type="submit" class="popup__button popup__button_created">
+              <button
+                type="submit"
+                class="popup__button popup__button_created"
+                disabled
+              >
                 Crear
               </button>
             </fieldset>
           </form>
         </div>
       </section>
-      <!--FORMULARIO2  popup-->
 
-      <!-- imagen main__profile-btnedit popup__form-add-->
-      <div class="popup__image-p popup">
-        <button
-          type="button"
-          id="button__close3"
-          class="popup__button popup__button_close"
-        >
-          <img
-            src="images/Close_Icon.png"
-            alt="icono de cerrar"
-            class="popup__icon-close"
-          />
-        </button>
-
-        <img
-          src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg"
-          alt=""
-          class="popup__image-pic"
-        />
-
-        <p class="popup__image-caption">Imagen</p>
+      <!-- MODAL DE IMAGEN AMPLIADA -->
+      <div class="popup popup_type_image popup__image-p">
+        <div class="popup__container-image">
+          <button
+            type="button"
+            id="button__close3"
+            class="popup__button popup__button_close"
+            aria-label="Cerrar imagen"
+          >
+            <img
+              src="images/Close_Icon.png"
+              alt="icono de cerrar"
+              class="popup__icon-close"
+            />
+          </button>
+          <img src="#" alt="" class="popup__image-pic" />
+          <p class="popup__image-caption"></p>
+        </div>
       </div>
 
-      <!-- imagen popup fin -->
+      <!-- HEADER -->
       <header class="header">
         <img
           src="./images/Vector.png"
           class="header__img"
-          alt="titulo de la pagina"
+          alt="titulo de la pagina Around The U.S."
         />
       </header>
 
+      <!-- MAIN -->
       <main class="main">
         <section class="main__container">
           <img
@@ -157,6 +170,7 @@
                 type="button"
                 class="popup__button popup__button-main popup__button_edit"
                 id="main__profile-btnedit"
+                aria-label="Editar perfil"
               >
                 <img src="./images/Edit_Button.png" alt="boton de editar" />
               </button>
@@ -168,27 +182,37 @@
           </div>
           <button
             type="button"
-            class="popup__button popup__button-main"
+            class="popup__button popup__button-main main__profile-addbutton"
             id="main__profile-addbutton"
+            aria-label="Agregar nueva tarjeta"
           >
             <img src="./images/Add_Button.png" alt="boton de añadir" />
           </button>
         </section>
+
         <section class="gallery"></section>
       </main>
+
+      <!-- FOOTER -->
       <footer class="footer">
         <h5 class="footer__autor">© 2025 Around The U.S.</h5>
       </footer>
     </div>
+
+    <!-- TEMPLATE DE TARJETA -->
     <template class="template-card">
       <div class="gallery__card">
         <img
-          src="./images/NY.jpg"
+          src="#"
           class="gallery__card-img"
-          alt="New york"
+          alt="Vista previa del lugar"
           style="cursor: pointer"
         />
-        <button type="button" class="popup__button popup__button_trash">
+        <button
+          type="button"
+          class="popup__button popup__button_trash"
+          aria-label="Eliminar tarjeta"
+        >
           <img
             src="./images/Trash.svg"
             alt="icono de eliminar"
@@ -198,15 +222,17 @@
         </button>
 
         <div class="gallery__footer">
-          <h4 class="gallery__footer-place">NEW YORK</h4>
+          <h4 class="gallery__footer-place"></h4>
           <button
-            aria-label="Like button"
+            aria-label="Me gusta"
             class="gallery__footer-btn"
             type="button"
           ></button>
         </div>
       </div>
     </template>
+
+    <!-- Único script modular principal -->
     <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
